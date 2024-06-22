@@ -1,0 +1,280 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.navBar {
+    
+    z-index:99;
+    position: fixed;
+    top:0;
+    width: 100%;
+    background-color:whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: black;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 0 2px 2px rgba(0,0,0,0.11), 0 4px 4px rgba(0,0,0,0.11), 0 6px 8px rgba(0,0,0,0.11), 0 8px 16px rgba(0,0,0,0.11);
+}
+
+.homevideo{
+    padding-top:100px;
+    position:relative;
+    width:100%;
+    height:100%;
+    background:cover;
+    
+}
+
+.hometext{
+    position:absolute;
+    left:30px;
+    top:300px;
+    height:50px;
+     line-height:50px;
+    font-size:30px;
+    text-transform:uppercase;
+    overflow:hidden;
+    animation:animation 10s ease infinite;
+}
+@keyframes animation{
+    0%{
+    
+        .hometext h1{
+            top:0px;
+        }
+    }
+    100%{
+        .hometext h1{
+        top:200px;
+        }
+    }
+}
+.homeimg{
+    position:absolute;
+    width:300px;
+    height:300px;
+    bottom:0px;
+    right:-280px;
+    animation:homeImagemove 10s linear 1s infinite;
+}
+@keyframes homeImagemove{
+
+
+    to{
+        right:2000px;
+    }
+}
+
+
+.navBar img{
+    height:60px;
+}
+.navBar h1 {
+    font-size: 40px;
+}
+.subNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transition: all 0.5s;
+}
+.subNav a {
+    font-size: 25px;
+    padding: 10px 15px;
+    transition: all 0.8s;
+    border-radius: 5px;
+    text-decoration:none;
+    cursor: pointer;
+    position: relative;
+}
+.subNav a:after{
+    content:'';
+    margin:auto;
+    display:block;
+    height:2px;
+    width:0%;
+    background-color:transparent;
+    transition:all .5s ease;
+}
+.subNav a:hover:after{
+    width:100%;
+    background-color:red;
+}
+
+input {
+    display: none;
+}
+input:checked~.subNav {
+    
+    background:rgba(223, 71, 234, 0.06);
+    box-shadow:0 8px 32px 0 rgba(31,38,135,.37);
+    border-left:2px solid rgba(214, 32, 211, 0.3);
+    border-bottom:2px solid rgba(211, 31, 238, 0.3);
+    left:50%;
+    border-bottom-left-radius:30% ;
+}
+.subNav a:hover {
+    color:red;
+}
+i {
+    font-size: 31px;
+    display: none!important;
+}
+.box {
+   
+    
+    width:100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+}
+.imgSlider{
+    margin-top:70px;
+    width:80%;
+    height:80vh;
+    background-image:url("https://sedonasacredrocks.com/wp-content/uploads/2020/01/Screen-Shot-2020-03-10-at-10.54.26-PM.png");
+    background-size:100% 100%;
+    box-shadow: rgba(19, 19, 217, 0.2) 0px 7px 29px 0px;
+    
+    animation:changeImage 100s linear 5s infinite;
+
+}
+
+
+.aboutimage{
+    margin-top:100px;
+    width:100%;
+    height:300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.aboutleft h1,.aboutright h1{
+    font-size:30px;
+}
+.aboutleft,.aboutright{
+    padding:60px;
+}
+.aboutleftright{
+    padding:60px;
+    display:flex;
+}
+.aboutleft h2,.aboutright h2{
+    margin-top:20px;
+    font-size:20px;
+    text-align:justify;
+    font-weight: lighter;
+}
+
+
+@keyframes changeImage{
+    0%{
+        background-image: url("./image1.jpg");
+    }
+    25%{
+        background-image: url("https://th.bing.com/th/id/OIP.cvl4P_2MZEE682f_DRXUHAHaEK?w=321&h=180&c=7&r=0&o=5&pid=1.7");
+    } 
+    50%{
+        background-image: url("https://antheaslife.com/wp-content/uploads/2022/10/Pranic-healing-ftrd-768x410.jpg");
+    }
+    75%{
+        background-image: url("https://th.bing.com/th/id/R.2c726e6c20b9d5db9956622397e610c3?rik=on1Xh335MYoTCw&riu=http%3a%2f%2fgoldenlotuscenter.ca%2fwp-content%2fuploads%2f2018%2f01%2fpranic-healing-advert-600x320.jpg&ehk=6plGoYeCUc4TOYayWYfkFfYqiW8f5tRfQZKxkXzCc%2fk%3d&risl=&pid=ImgRaw&r=0");
+    }
+    100%{
+        background-image: url("https://raisinrack.com/wp-content/uploads/2018/03/pranic_healing.png");
+    }
+}
+.gallery{
+    width:100%;
+    min-height:100vh;
+    display:inline-block;
+    
+    gap:20px;
+
+}
+.gallery img{
+    width:20%;
+    height:500px;
+    object-fit:cover;
+    transform:perspective(800px) rotateY(25deg);
+    transition:.5s;
+}
+.gallery:hover img{
+    opacity:.5;
+}
+.gallery img:hover{
+    transform:perspective(800px) rotateY(0deg) scale(1.5);
+    z-index:9;
+    opacity:1;
+}
+.footer {
+    background-color: #d711e5;
+    height:300px;
+    color: white;
+    text-align: center;
+    margin-top: auto; /* pushes the footer to the bottom of the page */
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .footer-section {
+    margin: 10px;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section p, .footer-section a {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #ccc;
+  }
+  
+  .footer-section a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .footer-section a:hover {
+    color: #ffcc00;
+  }
+  
+  .footer-bottom {
+    background-color: #222;
+    padding: 10px;
+    font-size: 0.8em;
+  }
+  
+
+@media only screen and (max-width:800px) {
+    .subNav {
+        position: fixed;
+        background-color:rgb(149, 138, 149);
+        left: 100%;
+        top: 86px;
+        width: 50%;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 50px;
+        height: 80vh;
+    }
+    .footer-content {
+        flex-direction: column;
+      }
+    i {
+        display:unset!important;
+    }
+
+}
